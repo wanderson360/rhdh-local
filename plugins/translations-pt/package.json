@@ -28,6 +28,8 @@
     "lint": "backstage-cli package lint",
     "export-dynamic": "janus-cli package export-dynamic-plugin --in-place",
     "export-dynamic:clean": "janus-cli package export-dynamic-plugin --clean --in-place",
+    "validate-export": "node tools/validate-export.mjs",
+    "export-dynamic:check": "yarn export-dynamic && yarn validate-export",
     "clean": "backstage-cli package clean"
   },
   "dependencies": {

@@ -62,12 +62,15 @@ Da raiz do monorepo:
 
 ```sh
 yarn workspace @empresa/translations-pt tsc
-yarn workspace @empresa/translations-pt export-dynamic
+yarn workspace @empresa/translations-pt export-dynamic:check
 ```
 
-O script `export-dynamic` gera `plugins/translations-pt/dist-scalprum/`, o
-bundle consumido pelo carregador de plugins dinâmicos. Esse diretório é gerado
-e ignorado pelo Git. A pipeline deve executar a exportação e disponibilizar
+O script `export-dynamic:check` executa a exportação e valida
+`plugins/translations-pt/dist-scalprum/`. A validação falha se não encontrar o
+manifesto Scalprum, os scripts referenciados pelo manifesto, os módulos
+expostos `PluginRoot` e `Alpha`, os três recursos de tradução do Catalog ou
+uma mensagem pt-BR do Catalog no bundle. Esse diretório é gerado e ignorado
+pelo Git. A pipeline deve executar a exportação validada e disponibilizar
 `dist-scalprum/` junto do pacote no estágio/imagem usado pelo instalador de
 plugins dinâmicos. Não basta copiar somente os arquivos TypeScript para a
 imagem que executa o RHDH.
