@@ -1,0 +1,49 @@
+{
+  "name": "@empresa/translations-pt",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "backstage": {
+    "role": "frontend-plugin",
+    "supported-versions": "1.49.4",
+    "pluginId": "translations-pt",
+    "pluginPackages": [
+      "@empresa/translations-pt"
+    ]
+  },
+  "files": [
+    "dist",
+    "dist-scalprum"
+  ],
+  "scalprum": {
+    "name": "internal.plugin-translations-pt",
+    "exposedModules": {
+      "PluginRoot": "./src/index.ts",
+      "Alpha": "./src/alpha.ts"
+    }
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "export-dynamic": "janus-cli package export-dynamic-plugin --in-place",
+    "export-dynamic:clean": "janus-cli package export-dynamic-plugin --clean --in-place",
+    "clean": "backstage-cli package clean"
+  },
+  "dependencies": {
+    "@backstage/core-components": "0.18.8",
+    "@backstage/core-plugin-api": "1.12.4",
+    "@backstage/plugin-catalog": "2.0.1",
+    "@backstage/plugin-catalog-react": "2.1.1"
+  },
+  "devDependencies": {
+    "@backstage/cli": "0.36.0",
+    "@janus-idp/cli": "3.7.0",
+    "@types/react": "18.3.31",
+    "react": "18.3.1",
+    "typescript": "5.9.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}
