@@ -67,6 +67,7 @@ services:
     volumes:
       - ./prepare-and-install-dynamic-plugins.sh:/opt/app-root/src/prepare-and-install-dynamic-plugins.sh:Z
       - ./local-plugins:/opt/app-root/src/local-plugins:Z
+      - ./plugins/translations-pt:/opt/app-root/src/plugins/translations-pt:Z
       - ./configs:/opt/app-root/src/configs:z
       - dynamic-plugins-root:/dynamic-plugins-root
       - extensions-catalog:${CATALOG_ENTITIES_EXTRACT_DIR:-/extensions}

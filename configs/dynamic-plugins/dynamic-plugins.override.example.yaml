@@ -36,6 +36,25 @@ includes:
 #                 title: Todo
 #                 mountPoint: entity.page.todo
 
+# # Portuguese translations plugin; build it with
+# # `yarn workspace @empresa/translations-pt export-dynamic` first.
+#   - package: ./plugins/translations-pt
+#     disabled: false
+#     pluginConfig:
+#       dynamicPlugins:
+#         frontend:
+#           internal.plugin-translations-pt:
+#             translationResources:
+#               - importName: catalogTranslationsPT
+#                 module: Alpha
+#                 ref: catalogTranslationRef
+#               - importName: catalogReactTranslationsPT
+#                 module: Alpha
+#                 ref: catalogReactTranslationRef
+#               - importName: coreComponentsTranslationsPT
+#                 module: Alpha
+#                 ref: coreComponentsTranslationRef
+
 # # loading image from container image
 #   - package: oci://docker.io/tomaskral/simple-chat:v0.0.1!internal-backstage-plugin-simple-chat
 #     disabled: false

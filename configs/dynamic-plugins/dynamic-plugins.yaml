@@ -5,6 +5,24 @@ includes:
   - /dynamic-plugins-root/dynamic-plugins.extensions.yaml
 
 plugins:
+  # Local Brazilian Portuguese translations for the Catalog and shared components
+  - package: ./plugins/translations-pt
+    disabled: false
+    pluginConfig:
+      dynamicPlugins:
+        frontend:
+          internal.plugin-translations-pt:
+            translationResources:
+              - importName: catalogTranslationsPT
+                module: Alpha
+                ref: catalogTranslationRef
+              - importName: catalogReactTranslationsPT
+                module: Alpha
+                ref: catalogReactTranslationRef
+              - importName: coreComponentsTranslationsPT
+                module: Alpha
+                ref: coreComponentsTranslationRef
+
   # Tech Radar frontend plugin
 # # TODO: Replace the `./dynamic-plugins/dist/` path with the OCI reference once we switch to that in the dynamic-plugins.default.yaml (DPDY) file in the catalog index image - see https://issues.redhat.com/browse/RHDHPLAN-934 and https://issues.redhat.com/browse/RHDHPLAN-256
   # - package: 'oci://quay.io/rhdh/backstage-community-plugin-tech-radar:{{inherit}}'

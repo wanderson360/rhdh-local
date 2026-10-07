@@ -10,6 +10,7 @@
 app:
   title: Red Hat Developer Hub
   baseUrl: ${BASE_URL}
+  language: pt-BR
   branding:
     # If using a different logo, replace these lines with your own image(s)
     # fullLogo: data:image/svg+xml;base64,your-image-goes-here==
@@ -42,6 +43,14 @@ app:
             backgroundColor:
               - ${HEADER_DARK_COLOR_1}
               - ${HEADER_DARK_COLOR_2}
+
+organization:
+  name: Minha Organização
+
+i18n:
+  defaultLocale: pt-BR
+  locales:
+    - pt-BR
 
 # Tech Radar Plugin Example - uncomment with plugin override to use
 # Replace URL with your own hosted json to visualize data in Tech Radar
