@@ -68,13 +68,13 @@ O workspace declara:
 - `scalprum.name`: `internal.plugin-translations-pt`;
 - módulos Scalprum `PluginRoot` e `Alpha`.
 
-Referência: [`plugins/translations-pt/package.json`](../../plugins/translations-pt/package.json).
+Referência: [`translations-pt/package.json`](../../translations-pt/package.json).
 
 O validador verifica o manifesto Scalprum, os scripts declarados, os bundles
 expostos e as mensagens pt-BR, mas não modifica nem valida arquivos
 `app-config*.yaml`.
 
-Referência: [`validate-export.mjs`](../../plugins/translations-pt/tools/validate-export.mjs).
+Referência: [`validate-export.mjs`](../../translations-pt/tools/validate-export.mjs).
 
 **Conclusão:** nesta implementação, exportar gera e valida o artefato do
 plugin. O wiring de `translationResources` precisa vir de configuração

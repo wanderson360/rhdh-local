@@ -21,7 +21,7 @@ plataforma.
 
 ## 1. Adicionar o plugin a um monorepo Yarn
 
-Copie a pasta `plugins/translations-pt` para o monorepo da empresa. Não é
+Copie a pasta `translations-pt` para o monorepo da empresa. Não é
 necessário publicar o pacote nem instalá-lo de um registry: ele será um
 workspace local.
 
@@ -38,13 +38,13 @@ plugin, por exemplo:
 ```
 
 Se o monorepo já usa outro padrão para plugins, mantenha o padrão existente e
-confirme que `plugins/translations-pt` está incluído. O nome do workspace é
+confirme que `translations-pt` está incluído. O nome do workspace é
 `@empresa/translations-pt`.
 
 ### Alinhar dependências
 
 As versões Backstage declaradas em
-`plugins/translations-pt/package.json` devem ser compatíveis com a versão do
+`translations-pt/package.json` devem ser compatíveis com a versão do
 RHDH e com as versões já usadas pelo portal. Confira especialmente
 `@backstage/core-plugin-api`, `@backstage/core-components`,
 `@backstage/plugin-catalog`, `@backstage/plugin-catalog-react` e a CLI usada
@@ -66,7 +66,7 @@ yarn workspace @empresa/translations-pt export-dynamic:check
 ```
 
 O script `export-dynamic:check` executa a exportação e valida
-`plugins/translations-pt/dist-scalprum/`. A validação falha se não encontrar o
+`translations-pt/dist-scalprum/`. A validação falha se não encontrar o
 manifesto Scalprum, os scripts referenciados pelo manifesto, os módulos
 expostos `PluginRoot` e `Alpha`, os três recursos de tradução do Catalog ou
 uma mensagem pt-BR do Catalog no bundle. Esse diretório é gerado e ignorado
@@ -88,7 +88,7 @@ pacote e associe cada recurso exportado à sua referência de tradução:
 
 ```yaml
 plugins:
-  - package: ./plugins/translations-pt
+  - package: ./translations-pt
     disabled: false
     pluginConfig:
       dynamicPlugins:
@@ -125,6 +125,10 @@ i18n:
 idiomas oferecidos. Reinicie ou reimplante a aplicação para que o instalador e
 o frontend carreguem a nova configuração.
 
+Neste repositório, o pacote está incluído no workspace Yarn. A seleção de
+`pt-BR` é uma configuração da aplicação; prefira habilitá-la em
+`app-config.local.yaml` para não alterar o idioma padrão global.
+
 ## 4. Traduzir outro plugin: exemplo com Argo CD
 
 O mesmo padrão pode ser usado para acrescentar traduções a outro plugin sem
@@ -142,7 +146,7 @@ aos do exemplo da comunidade.
 
 ### 4.1 Declarar a dependência
 
-Adicione ao `plugins/translations-pt/package.json` a dependência do pacote
+Adicione ao `translations-pt/package.json` a dependência do pacote
 Argo CD e use a versão compatível já aprovada pelo monorepo:
 
 ```json
@@ -158,7 +162,7 @@ Preserve as outras dependências que já existem no arquivo. Depois atualize o
 
 ### 4.2 Criar as mensagens parciais
 
-Crie `plugins/translations-pt/src/translations/argocd-pt.ts`:
+Crie `translations-pt/src/translations/argocd-pt.ts`:
 
 ```ts
 import { createTranslationMessages } from '@backstage/core-plugin-api/alpha';
@@ -189,7 +193,7 @@ aparecem no texto original.
 
 ### 4.3 Registrar e exportar o recurso
 
-Em `plugins/translations-pt/src/translations/index.ts`, importe a referência:
+Em `translations-pt/src/translations/index.ts`, importe a referência:
 
 ```ts
 import { argocdTranslationRef } from '@backstage-community/plugin-argocd/translations';

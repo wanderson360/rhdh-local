@@ -6,7 +6,7 @@ includes:
 
 plugins:
   # Local Brazilian Portuguese translations for the Catalog and shared components
-  - package: ./plugins/translations-pt
+  - package: ./translations-pt
     disabled: false
     pluginConfig:
       dynamicPlugins:

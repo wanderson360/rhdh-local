@@ -15,7 +15,7 @@ Entregar o plugin `translations-pt` funcional no RHDH: suas traduções parciais
 devem ser exportadas, instaladas e carregadas no frontend, mantendo as mensagens
 originais como fallback para chaves que não tenham tradução.
 
-O código-fonte de referência está em `plugins/translations-pt/`. Ele fornece
+O código-fonte de referência está em `translations-pt/`. Ele fornece
 traduções para:
 - `@backstage/plugin-catalog`;
 - `@backstage/plugin-catalog-react`;
@@ -26,7 +26,7 @@ Os recursos são registrados no módulo dinâmico `Alpha`, com o ID
 
 ## Antes de alterar arquivos
 
-1. Leia `plugins/translations-pt/README.md`, o `package.json` do plugin e os
+1. Leia `translations-pt/README.md`, o `package.json` do plugin e os
    arquivos de configuração relevantes do destino.
 2. Confira a versão do RHDH/Backstage, as versões dos pacotes `@backstage/*`,
    a CLI de exportação de plugins dinâmicos e o gerenciador de pacotes do
@@ -41,7 +41,7 @@ Os recursos são registrados no módulo dinâmico `Alpha`, com o ID
 
 Se o destino for este repositório, considere especialmente:
 - `package.json` na raiz e o workspace Yarn `@empresa/translations-pt`;
-- `plugins/translations-pt/package.json` e seu script
+- `translations-pt/package.json` e seu script
   `export-dynamic:check`;
 - `configs/dynamic-plugins/dynamic-plugins.yaml` e
   `configs/dynamic-plugins/dynamic-plugins.override.example.yaml`;
