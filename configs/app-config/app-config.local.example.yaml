@@ -42,15 +42,7 @@ app:
           default:
             backgroundColor:
               - ${HEADER_DARK_COLOR_1}
-              - ${HEADER_DARK_COLOR_2}
-
-organization:
-  name: Minha Organização
-
-i18n:
-  defaultLocale: pt-BR
-  locales:
-    - pt-BR
+              - ${HEADER_DARK_COLOR_2} 
 
 # Tech Radar Plugin Example - uncomment with plugin override to use
 # Replace URL with your own hosted json to visualize data in Tech Radar
